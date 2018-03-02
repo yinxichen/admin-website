@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="renderer" content="webkit">
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+		{% block keywords %}{% endblock %}
+		<title>{% block title %}{% endblock %}</title>
+
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="{{ path.src }}css/bootstrap.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="{{ path.src }}css/font-awesome.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="{{ path.src }}css/ionicons.css">
+		<!-- AdminJKJ style -->
+		<link rel="stylesheet" href="{{ path.src }}css/{{ name.lower }}-{{ version.css }}.css">
+		<link rel="stylesheet" href="{{ path.src }}css/{{ name.lower }}-themes-{{ version.theme }}.css">
+		
+		<!--子页面样式-->
+		{% block css %}{% endblock %}
+
+		<!-- 百度统计代码 -->
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+			  var hm = document.createElement("script");
+			  hm.src = "https://hm.baidu.com/hm.js?9e9c88d86e5c2d5fb0c431652558762d";
+			  var s = document.getElementsByTagName("script")[0]; 
+			  s.parentNode.insertBefore(hm, s);
+			})();
+		</script>
+			
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="{{ path.src }}js/html5shiv.js"></script>
+		<script src="{{ path.src }}js/respond.js"></script>
+		<![endif]-->   
+	</head>
+	<body>
+		  	<!--header-->
+			{% include "./header.html" %}
+			<!--子页面内容-->
+			{% block content %}{% endblock %}
+			<!--footer-->
+			{% include "./footer.html" %}
+
+			<!-- jquery 2.2.3 -->
+			<script src="{{ path.src }}js/jquery-2.2.3.min.js"></script>
+			<!-- Bootstrap 3.3.6 -->
+			<script src="{{ path.src }}js/bootstrap.js"></script>
+			<!-- bixjs -->
+			<script src="{{ path.src }}js/{{ name.lower }}-{{ version.js }}.js" type="text/javascript"></script>
+			
+		<!--子页面脚本-->
+		{% block js %}{% endblock %}
+	</body>
+</html>

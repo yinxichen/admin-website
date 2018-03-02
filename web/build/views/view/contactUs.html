@@ -1,0 +1,60 @@
+{% extends "../shared/layout.html" %} {% block title %}联系我们_币鑫云{% endblock %} {% block keywords %}
+<meta name="keywords" content="南京币鑫科技有限公司,币鑫数据电话,币鑫数据微信,币鑫云微信.联系币鑫云,币鑫云电话,币鑫云地址,币鑫云邮箱,联系外综服平台,搭建外综服平台,外综服平台建站,出口系统,退税系统,报关系统">
+<meta name="description" content="在这个页面可以查询到南京币鑫科技有限公司，及下属产品币鑫云的合作联系电话和邮箱，告知需求，轻松达成合作。 "> {% endblock %} {% block css %}{% endblock %} {% block content %}
+<div class="bg-contactUs"></div>
+<div class="page-content">
+    <div class="row contact-page">
+        <div class="col-xs-4">
+            <div class="contact-title mt-40">联系我们</div>
+        </div>
+        <div class="col-xs-8">
+            <div class="contact-cont">
+                <img src="{{ path.src }}images/img-contactUs-01.png" alt="联系电话">
+                <p>电话</p>
+                <p style="font-size:24px;">025-8435-6883</p>
+            </div>
+            <div class="contact-cont">
+                <img src="{{ path.src }}images/img-contactUs-02.png" alt="邮箱">
+                <p>邮箱</p>
+                <p style="font-size:24px;"><a href="mailto:service@bixyun.com">service@bixyun.com</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="row contact-page">
+        <div class="col-xs-4 mt-40">
+            <div class="contact-title">公司地址</div>
+        </div>
+        <div class="col-xs-8">
+            <div class="contact-cont">
+                <img src="{{ path.src }}images/img-contactUs-03.png" alt="联系电话">
+                <p style="font-size:24px; padding-top:20px; font-family: '黑体','宋体';">中国 江苏 南京 栖霞区马群大道10号三宝科技园</p>
+            </div>
+            <div id="container" class="contactUs-map mt-20"></div>
+        </div>
+    </div>
+</div>
+{% endblock %} {% block js %}
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=565c1d025dabf04a1cfd52f61d9ba32d"></script>
+<script>
+    var map = new AMap.Map('container', {
+        zoom: 16,
+        center: [118.896348, 32.067459]
+    });
+    var marker = new AMap.Marker({
+        position: [118.896348, 32.067459]
+    });
+    marker.setMap(map);
+    var info = new AMap.InfoWindow({
+        content: "南京币鑫数据科技有限公司",
+        offset: new AMap.Pixel(0, -28)
+    })
+    info.open(map, marker.getPosition())
+    AMap.plugin(['AMap.OverView'],
+        function () {
+            map.addControl(new AMap.OverView({
+                isOpen: true
+            }));
+        });
+</script>
+
+{% endblock %}

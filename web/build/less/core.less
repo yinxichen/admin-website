@@ -1,0 +1,65 @@
+/*
+ * Component: core
+ * ----------------
+ */
+ html, body{
+    font-family: tahoma, arial, "Hiragino Sans GB", "宋体", sans-serif;
+    color: #333;
+    min-width: 1200px;
+}
+body{
+    background: url(../images/bg-body.jpg) 0 repeat;
+}
+a {
+    //color: @link-color;
+    cursor: pointer;
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+a:hover,
+a:active,
+a:focus {
+    outline: none;
+    text-decoration: none;
+    //color: darken(@link-color, 10%);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+    }
+}
+
+button {
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+&::-moz-placeholder {
+    color: #b1b1b1;
+    opacity: 1;
+}
+
+&:-ms-input-placeholder {
+    color: #b1b1b1;
+}
+
+&::-webkit-input-placeholder {
+    color: #b1b1b1;
+}
+
+label{
+    font-weight: normal;
+    margin: 0;
+}
+
+input[type="radio"], input[type="checkbox"]{
+    vertical-align: text-bottom;
+}
